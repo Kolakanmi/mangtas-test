@@ -24,8 +24,6 @@ func Service(input string) ([]byte, error) {
 
 	result := make([]Response, 0, len(wordMap))
 
-	// result := []Response{}
-
 	for word, occurrence := range wordMap {
 		result = append(result, Response{word, occurrence})
 	}
@@ -37,5 +35,4 @@ func Service(input string) ([]byte, error) {
 		result = result[:10]
 	}
 	return json.Marshal(result)
-	// return result[0:10]
 }
