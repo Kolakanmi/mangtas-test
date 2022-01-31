@@ -12,6 +12,7 @@ type Response struct {
 }
 
 func Service(input string) ([]byte, error) {
+	input = strings.ToLower(input)
 	wordMap := make(map[string]int)
 	for _, word := range strings.Split(input, " ") {
 		saved, ok := wordMap[word]
